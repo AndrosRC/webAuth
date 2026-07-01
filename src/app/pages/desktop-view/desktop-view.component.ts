@@ -1,5 +1,13 @@
 import { Component, inject, signal } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonCol,
+  IonContent,
+  IonGrid,
+  IonHeader,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/angular/standalone';
 import { AuthStatusComponent } from '../../components/auth-status/auth-status.component';
 import { QrDisplayComponent } from '../../components/qr-display/qr-display.component';
 import { ActivityLogComponent } from '../../components/activity-log/activity-log.component';
@@ -8,7 +16,18 @@ import { BackendService } from '../../services/backend';
 @Component({
   selector: 'app-desktop-view',
   standalone: true,
-  imports: [IonicModule, AuthStatusComponent, QrDisplayComponent, ActivityLogComponent],
+  imports: [
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonGrid,
+    IonRow,
+    IonCol,
+    AuthStatusComponent,
+    QrDisplayComponent,
+    ActivityLogComponent,
+  ],
   templateUrl: './desktop-view.component.html',
   styleUrls: ['./desktop-view.component.scss']
 })

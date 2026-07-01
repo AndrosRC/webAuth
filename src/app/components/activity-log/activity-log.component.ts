@@ -1,6 +1,12 @@
 import { Component, inject, OnInit, output } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
 import { DatePipe } from '@angular/common';
+import {
+  IonBadge,
+  IonButton,
+  IonIcon,
+  IonItem,
+  IonLabel,
+} from '@ionic/angular/standalone';
 import { BackendService } from '../../services/backend';
 import { addIcons } from 'ionicons';
 import { trash, closeCircleOutline } from 'ionicons/icons';
@@ -8,7 +14,7 @@ import { trash, closeCircleOutline } from 'ionicons/icons';
 @Component({
   selector: 'app-activity-log',
   standalone: true,
-  imports: [IonicModule, DatePipe],
+  imports: [IonItem, IonLabel, IonBadge, IonButton, IonIcon, DatePipe],
   templateUrl: './activity-log.component.html',
   styleUrls: ['./activity-log.component.scss']
 })

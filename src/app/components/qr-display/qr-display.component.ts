@@ -1,11 +1,26 @@
 import { Component, input, output } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import {
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonInput,
+  IonItem,
+  IonLabel,
+} from '@ionic/angular/standalone';
 import { QRCodeComponent } from 'angularx-qrcode';
 
 @Component({
   selector: 'app-qr-display',
   standalone: true,
-  imports: [IonicModule, QRCodeComponent],
+  imports: [
+    IonCard,
+    IonCardContent,
+    IonItem,
+    IonLabel,
+    IonInput,
+    IonButton,
+    QRCodeComponent,
+  ],
   templateUrl: './qr-display.component.html',
   styleUrls: ['./qr-display.component.scss']
 })
