@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Authenticator WEB</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <app-auth-status 
+          serviceName="Servicio Demo" 
+          userEmail="usuario@empresa.com"
+          (generateQrEvent)="handleGenerate($event)">
+        </app-auth-status>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <app-qr-display 
+          [qrData]="currentSecret()"
+          (verifyEvent)="handleVerify($event)">
+        </app-qr-display>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <app-activity-log (revokedEvent)="handleRevoke($event)"></app-activity-log>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Autenticador Móvil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" [class.scanner-active]="authTools.isScanning()">
+  <div class="scanner-container">
+    
+    @if (authTools.scanResult()) {
+      <ion-card color="dark" class="totp-card">
+        <ion-card-content>
+          <div class="totp-header">
+            <h2>Código Generado</h2>
+          </div>
+          
+          <div class="totp-display-row">
+            <h1 class="pin-text">{{ authTools.currentPin() }}</h1>
+            
+            <div class="timer-wrapper">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path class="circle-bg"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                <path class="circle"
+                  [style.stroke-dasharray]="authTools.progressPercentage() + ', 100'"
+                  d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+              </svg>
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-button color="danger" fill="outline" expand="block" class="ion-margin-top" (click)="stopScanning()">
+        Desvincular
+      </ion-button>
+      
+    } @else {
+      <ion-card color="dark" class="welcome-card ion-text-center">
+        <ion-card-content>
+          <ion-icon name="barcode-outline" class="welcome-icon"></ion-icon>
+          <h2>Vincular Cuenta</h2>
+          <p class="ion-margin-bottom">Escanea el código QR de tu computadora para generar pines.</p>
+          <ion-button expand="block" (click)="startScanning()">
+            Iniciar Escáner
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    }
+  </div>
+</ion-content>

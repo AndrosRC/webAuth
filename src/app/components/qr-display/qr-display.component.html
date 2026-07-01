@@ -1,0 +1,20 @@
+<ion-card class="qr-container">
+  <ion-card-content class="ion-text-center">
+    @if (qrData()) {
+      <qrcode [qrdata]="qrData()" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+      <h2>QR listo para escanear</h2>
+      <p>Escanea este código con tu app móvil y escribe el PIN generado abajo para confirmar.</p>
+      
+      <ion-item class="ion-margin-top">
+        <ion-label position="floating">Código TOTP de 6 dígitos</ion-label>
+        <ion-input #pinInput type="number" maxlength="6"></ion-input>
+      </ion-item>
+      
+      <ion-button expand="block" color="success" class="ion-margin-top" (click)="onVerify(pinInput.value)">
+        Verificar y Vincular
+      </ion-button>
+    } @else {
+      <p>Esperando datos para generar QR...</p>
+    }
+  </ion-card-content>
+</ion-card>

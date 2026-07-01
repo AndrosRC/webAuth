@@ -1,0 +1,16 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Alta de autenticador</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="stacked">Servicio</ion-label>
+      <ion-input [value]="serviceName()" readonly></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Cuenta</ion-label>
+      <ion-input [value]="userEmail()" readonly></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="onGenerate()">Generar QR</ion-button>
+  </ion-card-content>
+</ion-card>
