@@ -35,7 +35,16 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": [
+              "node_modules/@ionic/angular/css/core.css",
+              "node_modules/@ionic/angular/css/normalize.css",
+              "node_modules/@ionic/angular/css/structure.css",
+              "node_modules/@ionic/angular/css/typography.css",
+              "node_modules/@ionic/angular/css/display.css",
+              "node_modules/@ionic/angular/css/palettes/dark.system.css",
+              "src/global.scss",
+              "src/theme/variables.scss"
+            ],
             "scripts": [],
             "browser": "src/main.ts"
           },
@@ -109,7 +118,16 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
+            "styles": [
+                "node_modules/@ionic/angular/css/core.css",
+                "node_modules/@ionic/angular/css/normalize.css",
+                "node_modules/@ionic/angular/css/structure.css",
+                "node_modules/@ionic/angular/css/typography.css",
+                "node_modules/@ionic/angular/css/display.css",
+                "node_modules/@ionic/angular/css/palettes/dark.system.css",
+                "src/global.scss",
+                "src/theme/variables.scss"
+              ],
             "scripts": []
           },
           "configurations": {
